@@ -7,7 +7,7 @@ const leftRightPadding = '2rem'
 const headerPadding = { small: `1rem ${leftRightPadding}`, medium: `2.5rem ${leftRightPadding}`, large: `4rem ${leftRightPadding}` };
 const Header = styled.div`
     display: flex;
-    flex-direction: ${props => props.direction}
+    flex-direction: ${props => props.direction};
     align-items: center;
     justify-content: ${props => props.isCentered ? 'center' : 'inherit'};
     padding: ${props => headerPadding[props.size]};
