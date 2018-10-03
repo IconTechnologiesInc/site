@@ -1,0 +1,16 @@
+$transition-ease: ease-in-out
+    
+.hero
+    background-color: #f6f5f5;
+    .hero-body
+        h1,
+        .title,
+            visibility: hidden
+            .body--loaded &
+                visibility: visible
+                animation: fadeInUpSmall $animation-duration-x3 both $transition-ease
+        .subtitle
+            visibility: hidden
+            .body--loaded &
+                visibility: visible
+                animation: fadeInUpSmall $animation-duration-x4 both $transition-ease

@@ -1,0 +1,116 @@
+$size-1: 6rem
+$size-2: 3rem 
+$size-3: 2rem 
+$size-4: 1.5rem 
+$size-5: 1.2rem 
+$size-6: 1rem
+$size-7: 0.75rem
+
+@import "~bulma"
+@import "animation"
+@import "colors"
+@import "hero"
+
+$brand-color-primary: #49AFDB
+$brand-color-lighter: #8EC8E1
+$brand-color-darker: #3886A8
+$brand-color-darker-2: #1E495B
+$brand-color-darkest: #3A515B
+
+$base-gap-size: 5; // 5rem
+$gap-size-1: $base-gap-size + rem
+$gap-size-2: ($base-gap-size * 0.8) + rem
+$gap-size-3: ($base-gap-size * 0.6) + rem
+$gap-size-4: ($base-gap-size * 0.4) + rem
+$gap-size-5: ($base-gap-size * 0.2) + rem
+
+$base-card-x-padding: 5%
+
+// fix to keep footer at bottom
+.site 
+    display: flex
+    min-height: 100vh
+    flex-direction: column
+
+    .content-x 
+        flex: 1
+
+h1
+    font-weight: bold !important
+    @extend .has-text-grey-dark
+
+.has-top-gap-1
+    margin-top: $gap-size-1 !important
+.has-top-gap-2
+    margin-top: $gap-size-2 !important
+.has-top-gap-3
+    margin-top: $gap-size-3 !important
+.has-top-gap-4
+    margin-top: $gap-size-4 !important
+.has-top-gap-5
+    margin-top: $gap-size-5 !important
+
+.has-bottom-gap-1
+    margin-bottom: $gap-size-1 !important
+.has-bottom-gap-2
+    margin-bottom: $gap-size-2 !important
+.has-bottom-gap-3
+    margin-bottom: $gap-size-3 !important
+.has-bottom-gap-4
+    margin-bottom: $gap-size-4 !important
+.has-bottom-gap-5
+    margin-bottom: $gap-size-5 !important
+
+.glow
+    box-shadow: 0 2px 60px 0 rgba(15, 16, 18, 0.18)
+
+.media.is-center
+        align-items: center
+
+.careers-benefits
+    .column
+        padding: 0
+        .content 
+            @extend .has-top-gap-4
+        .card-x-header
+            @extend .has-text-grey
+            @extend .has-background-grey-lighter
+            .fa
+                color: $brand-color-primary
+
+[data-emergence="hidden"]
+    opacity: 0
+[data-emergence="visible"].slide-up
+    transform: translateY(100px)
+    transition: opacity 600ms $transition-ease
+    animation: slide-up 1s ease forwards
+    &:nth-child(1n + 1)
+        animation-duration: 400ms
+    &:nth-child(2n + 2)
+        animation-duration: 800ms
+    &:nth-child(3n + 3)
+        animation-duration: 1200ms
+
+.button
+    transition: background-color 0.4s ease 0s, color 0.4s ease 0s, border-color 0.4s ease 0s
+    border-width: 2px
+    padding: 0.6em 1.25em
+    height: inherit
+    +button-medium
+    &.is-branded
+        color: $brand-color-primary
+        &:hover,
+        &.is-hovered
+            color: white
+            background-color: $brand-color-primary
+            border-color: transparent
+
+.full-bg
+    padding: $base-card-x-padding
+    overflow: hidden
+    &.is-large
+        padding: $base-card-x-padding * 2
+    &.is-branded
+        background-color: $brand-color-primary
+    &.is-branded-dark
+        background-color: $brand-color-darker

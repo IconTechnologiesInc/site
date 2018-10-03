@@ -1,0 +1,20 @@
+
+$animation-duration: 200ms;
+$animation-duration-x2: 400ms;
+$animation-duration-x3: 600ms;
+$animation-duration-x4: 800ms;
+$animation-duration-x5: 1000ms;
+$animation-duration-x6: 1200ms; 
+
+@keyframes slide-up 
+    to 
+        transform: translateY(0)
+        
+@keyframes fadeInUpSmall 
+    from 
+        opacity: 0
+        transform: translate3d(0, 5px, 0)
+    to 
+        opacity: 1
+        transform: translate3d(0, 0, 0)
+        display: block
