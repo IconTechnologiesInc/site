@@ -22,16 +22,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     npm install -g gatsby-cli
     ```
 
-2.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the default starter.
-
-    ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter
-    ```
-
-3.  **Start developing.**
+2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -40,7 +31,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     gatsby develop
     ```
 
-4.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
     
@@ -101,6 +92,16 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 -   **To dive straight into code samples head [to our documentation](https://next.gatsbyjs.org/docs/).** In particular, check out the “Guides”, API reference, and “Advanced Tutorials” sections in the sidebar.
 
-## 💫 Deploy
+## 💫 Production Build
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+To create a production build, run:
+
+```sh
+gatsby build
+```
+
+The public folder represents the static site. To manually deploy, copy (or zip) the contents of the public directory and upload to the server.
+
+## Deploying to AWS
+
+[Gatsby tutorial](https://www.gatsbyjs.org/docs/deploying-to-s3-cloudfront)
