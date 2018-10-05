@@ -18,7 +18,7 @@ const CareersPage = props => (
         <Hero hasTextAlign="centered">
             <HeroBody>
                 <Container>
-                    <Title className="is-size-1">Join Our Team</Title>
+                    <Title className="is-size-2">We're always looking for fresh talent</Title>
                 </Container>
             </HeroBody>
         </Hero>
