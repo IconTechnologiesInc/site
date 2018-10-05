@@ -27,13 +27,18 @@ $gap-size-5: ($base-gap-size * 0.2) + rem
 $base-card-x-padding: 5%
 
 // fix to keep footer at bottom
-.site 
-    display: flex
-    min-height: 100vh
-    flex-direction: column
+.content-x 
+    background-color: $background
+    margin-bottom: 240px
+    padding-bottom: 8%
+    position: relative
+    z-index: 1   
 
-    .content-x 
-        flex: 1
+#footer
+    bottom: 0
+    position: fixed
+    width: 100%
+    z-index: -1
 
 h1
     font-weight: bold !important
