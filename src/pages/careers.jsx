@@ -211,10 +211,11 @@ const CareersPage = props => (
                         <Column 
                             className="has-text-centered beb beb-grey-lighter" 
                             style={{ 
-                                paddingBottom: 25, 
-                                display: 'flex', 
-                                alignItems: 'center', 
-                                justifyContent: 'center'
+                                alignItems: 'center',
+                                backgroundColor: 'white',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                paddingBottom: 25,
                             }}
                         >
                             <Button primary className="line-effect">JOIN THE TEAM</Button>
