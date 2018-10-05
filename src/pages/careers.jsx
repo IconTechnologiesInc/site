@@ -1,10 +1,11 @@
 import React from 'react'
-import { Button, Columns, Column, Container, Hero, HeroBody, Icon, Section, Title } from 'bloomer'
+import { Columns, Column, Container, Hero, HeroBody, Icon, Section, Title } from 'bloomer'
 import styled from 'styled-components'
 import { Emerge } from 'react-emergence'
 import { CardX, CardXContent, CardXHeader, CardXItem } from '../components/CardX'
 import Layout from '../layouts'
 import careersBanner from '../images/careers.jpeg'
+import Button from '../components/Button'
 
 const Background = styled.div`
     background: linear-gradient(180deg, transparent, rgba(73, 175, 219, 1) 100%), url(${careersBanner});
@@ -33,7 +34,7 @@ const CareersPage = props => (
             </Background>
         </Section>
 
-        <Section className="careers-benefits">
+        <Section>
             <Container>
                 <Columns isCentered={true} className="has-bottom-gap-1">
                     <Column isCentered={true} className="is-3 is-size-3 has-text-centered">
@@ -41,56 +42,60 @@ const CareersPage = props => (
                     </Column>
                 </Columns>
 
-                <Columns className="is-centered has-bottom-gap-2">
-                    <Column className="is-3">
-                        <CardX className="is-center">
-                            <CardXHeader isCentered={true} direction="column">
-                                <CardXItem>
-                                    <Icon className="fa fa-leanpub fa-3x is-large"></Icon>        
-                                </CardXItem>
-                                <CardXItem>
-                                    <span className="is-size-4">Training</span>
-                                </CardXItem>
-                            </CardXHeader>
-                            <CardXContent size="large">
-                                <p>We encourage and support you by offering annual training budgets. Want to become a certified Scrum Master, get a membership to Pluralsight, or take a guerrilla .NET course? Do it, it's your choice!</p>
-                            </CardXContent>
-                        </CardX>
-                    </Column>
-                    <Column className="is-3 is-offset-1">
-                        <CardX className="is-center">
-                            <CardXHeader isCentered={true} direction="column">
-                                <CardXItem>
-                                    <Icon className="fa fa-refresh fa-3x is-large"></Icon>        
-                                </CardXItem>
-                                <CardXItem>
-                                    <span className="is-size-4">Tech Refresh</span>
-                                </CardXItem>
-                            </CardXHeader>
-                            <CardXContent size="large">
-                                <p>We're geeks at heart! Everyone gets a yearly budget of $750 for any tech or gadgets they need in their life.</p>
-                            </CardXContent>
-                        </CardX>
-                    </Column>
-                    <Column className="is-3 is-offset-1">
-                        <CardX className="is-center">
-                            <CardXHeader isCentered={true} direction="column">
-                                <CardXItem>
-                                    <Icon className="fa fa-gift fa-3x is-large"></Icon>        
-                                </CardXItem>
-                                <CardXItem>
-                                    <span className="is-size-4">Bonuses</span>
-                                </CardXItem>
-                            </CardXHeader>
-                            <CardXContent size="large">
-                                <p>Performance bonuses are rewarded annually up to 10% of your salary. Employee referral bonuses of $5k and business development revenue bonuses are additionally awarded.</p>
-                            </CardXContent>
-                        </CardX>
-                    </Column>
-                </Columns>
-                <Columns className="is-centered has-bottom-gap-2">
+                <Columns className="benefits is-centered is-multiline has-bottom-gap-2">
                     <Emerge>
-                        <Column className="is-3 slide-up">
+                        <Column className="is-4 slide-up">
+                            <CardX className="is-center">
+                                <CardXHeader isCentered={true} direction="column">
+                                    <CardXItem>
+                                        <Icon className="fa fa-leanpub fa-3x is-large"></Icon>        
+                                    </CardXItem>
+                                    <CardXItem>
+                                        <span className="is-size-4">Training</span>
+                                    </CardXItem>
+                                </CardXHeader>
+                                <CardXContent size="large">
+                                    <p>We encourage and support you by offering annual training budgets. Want to become a certified Scrum Master, get a membership to Pluralsight, or take a guerrilla .NET course? Do it, it's your choice!</p>
+                                </CardXContent>
+                            </CardX>
+                        </Column>
+                    </Emerge>
+                    <Emerge>
+                        <Column className="is-4 slide-up">
+                            <CardX className="is-center">
+                                <CardXHeader isCentered={true} direction="column">
+                                    <CardXItem>
+                                        <Icon className="fa fa-refresh fa-3x is-large"></Icon>        
+                                    </CardXItem>
+                                    <CardXItem>
+                                        <span className="is-size-4">Tech Refresh</span>
+                                    </CardXItem>
+                                </CardXHeader>
+                                <CardXContent size="large">
+                                    <p>We're geeks at heart! Everyone gets a yearly budget of $750 for any tech or gadgets they need in their life.</p>
+                                </CardXContent>
+                            </CardX>
+                        </Column>
+                    </Emerge> 
+                    <Emerge>
+                        <Column className="is-4 slide-up">
+                            <CardX className="is-center">
+                                <CardXHeader isCentered={true} direction="column">
+                                    <CardXItem>
+                                        <Icon className="fa fa-gift fa-3x is-large"></Icon>        
+                                    </CardXItem>
+                                    <CardXItem>
+                                        <span className="is-size-4">Bonuses</span>
+                                    </CardXItem>
+                                </CardXHeader>
+                                <CardXContent size="large">
+                                    <p>Performance bonuses are rewarded annually up to 10% of your salary. Employee referral bonuses of $5k and business development revenue bonuses are additionally awarded.</p>
+                                </CardXContent>
+                            </CardX>
+                        </Column>
+                    </Emerge>
+                    <Emerge>
+                        <Column className="is-4 slide-up">
                             <CardX className="is-center">
                                 <CardXHeader isCentered={true} direction="column">
                                     <CardXItem>
@@ -107,7 +112,7 @@ const CareersPage = props => (
                         </Column>    
                     </Emerge>
                     <Emerge>
-                        <Column className="is-3 is-offset-1 slide-up">
+                        <Column className="is-4 slide-up">
                             <CardX className="is-center">
                                 <CardXHeader isCentered={true} direction="column">
                                     <CardXItem>
@@ -124,7 +129,7 @@ const CareersPage = props => (
                         </Column>   
                     </Emerge>
                     <Emerge>
-                        <Column className="is-3 is-offset-1 slide-up">
+                        <Column className="is-4 slide-up">
                             <CardX className="is-center">
                                 <CardXHeader isCentered={true} direction="column">
                                     <CardXItem>
@@ -140,10 +145,8 @@ const CareersPage = props => (
                             </CardX>
                         </Column>
                     </Emerge>
-                </Columns>
-                <Columns className="is-centered">
                     <Emerge>
-                        <Column className="is-3 slide-up">
+                        <Column className="is-4 slide-up">
                             <CardX>
                                 <CardXHeader isCentered={true} direction="column">
                                     <CardXItem>
@@ -160,7 +163,7 @@ const CareersPage = props => (
                         </Column>
                     </Emerge>
                     <Emerge>
-                        <Column className="is-3 is-offset-1 slide-up">
+                        <Column className="is-4 slide-up">
                             <CardX>
                                 <CardXHeader isCentered={true} direction="column">
                                     <CardXItem>
@@ -177,7 +180,7 @@ const CareersPage = props => (
                         </Column>
                     </Emerge>
                     <Emerge>
-                        <Column className="is-3 is-offset-1 slide-up">
+                        <Column className="is-4 slide-up">
                             <CardX>
                                 <CardXHeader isCentered={true} direction="column">
                                     <CardXItem>
@@ -198,15 +201,23 @@ const CareersPage = props => (
         </Section>
     
         <Emerge>
-            <Section className="slide-up is-medium">
-                <Container className="glow" style={{ overflow: "hidden" }}>
-                    <Columns style={{ alignItems: 'center' }}>
+            <Section className="slide-up">
+                <Container className="glow">
+                    <Columns style={{ alignItems: 'stretch' }}>
                         <Column className="is-8 full-bg is-branded is-large">
                             <span className="is-size-2 has-text-white">Think we might be a good fit?</span>
                             <p className="has-text-light has-top-gap-4">We're always in the market for fresh and exciting talent. If you apply for a position and we like what we see, we'll ask you to start our multi-process interview. In addition to our technical and business interviews we also take time to talk about our unique culture to make sure you'll be part of team with values and opportunities that align with your own goals.</p>
                         </Column>
-                        <Column className="has-text-centered" style={{ paddingBottom: 25 }}>
-                            <Button className="is-branded">JOIN THE TEAM</Button>
+                        <Column 
+                            className="has-text-centered beb beb-grey-lighter" 
+                            style={{ 
+                                paddingBottom: 25, 
+                                display: 'flex', 
+                                alignItems: 'center', 
+                                justifyContent: 'center'
+                            }}
+                        >
+                            <Button primary className="line-effect">JOIN THE TEAM</Button>
                         </Column>
                     </Columns>
                 </Container>

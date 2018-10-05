@@ -67,16 +67,11 @@ h1
 .media.is-center
         align-items: center
 
-.careers-benefits
+.benefits
     .column
-        padding: 0
-        .content 
-            @extend .has-top-gap-4
+        padding: 2.5rem
         .card-x-header
-            @extend .has-text-grey
             @extend .has-background-grey-lighter
-            .fa
-                color: $brand-color-primary
 
 [data-emergence="hidden"]
     opacity: 0
@@ -91,26 +86,39 @@ h1
     &:nth-child(3n + 3)
         animation-duration: 1200ms
 
-.button
-    transition: background-color 0.4s ease 0s, color 0.4s ease 0s, border-color 0.4s ease 0s
-    border-width: 2px
-    padding: 0.6em 1.25em
-    height: inherit
-    +button-medium
-    &.is-branded
-        color: $brand-color-primary
-        &:hover,
-        &.is-hovered
-            color: white
-            background-color: $brand-color-primary
-            border-color: transparent
-
 .full-bg
     padding: $base-card-x-padding
     overflow: hidden
     &.is-large
-        padding: $base-card-x-padding * 2
+        padding: $base-card-x-padding * 1.8
     &.is-branded
         background-color: $brand-color-primary
     &.is-branded-dark
         background-color: $brand-color-darker
+
+// .beb
+//     pointer-events: none 
+//     position: relative
+//     transition: background-image 2s ease
+//     z-index: 10
+
+//     &:before
+//         content: ''
+//         opacity: 0
+//         position: absolute
+//         top: 0
+//         right: 0
+//         bottom: 0
+//         left: 0
+//         z-index: -10
+//         transition: opacity 1s ease-in-out
+
+//     &:hover
+//         &:before
+//             opacity: 1
+
+//     &-grey-lighter:before
+//         background-image: linear-gradient(transparent, $grey-lighter)
+
+//     button, .button
+//         pointer-events: auto

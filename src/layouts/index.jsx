@@ -1,11 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { ParallaxProvider } from 'react-scroll-parallax'
 import 'font-awesome/css/font-awesome.css'
 import './all.sass'
 import Header from '../components/Header/index'
 import Footer from '../components/Footer/index'
 import emergence from 'emergence.js'
+import { ThemeProvider } from 'styled-components'
+import theme from '../layouts/theme'
 
 class MainLayout extends React.Component {
     componentDidMount() {
@@ -15,7 +16,7 @@ class MainLayout extends React.Component {
 
     render() {
         return (
-            // <ParallaxProvider> 
+            <ThemeProvider theme={theme}>
                 <div className="site">
                     <Helmet title="Icon Technologies">
                         <meta name="description" content="Icon Technologies solves mission critical information technology problems with industry leading, experienced talent."/>
@@ -28,7 +29,7 @@ class MainLayout extends React.Component {
     
                     <Footer/>
                 </div>
-            // </ParallaxProvider>
+            </ThemeProvider>
         )
     }
 }

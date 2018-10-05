@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Container, Navbar, NavbarItem, NavbarBrand, NavbarBurger, NavbarMenu, NavbarStart, NavbarEnd, Image } from 'bloomer'
+import { Container, Navbar, NavbarItem, NavbarBrand, NavbarBurger, NavbarMenu, NavbarEnd, Image } from 'bloomer'
 import logo from '../../images/icon_technologies_logo_v3.svg'
 
 const AppHeader = ({ currentPath }) => (
@@ -18,8 +18,8 @@ const AppHeader = ({ currentPath }) => (
 
             <NavbarMenu>
                 <NavbarEnd>
-                    <NavbarItem className="is-tab" isActive={currentPath === '/about'}><Link to="/about">About</Link></NavbarItem>
-                    <NavbarItem className="is-tab" isActive={currentPath === '/careers'}><Link to="/careers">Careers</Link></NavbarItem>
+                    <NavbarItem className="is-tab" isActive={currentPath === '/about/'}><Link to="/about">About</Link></NavbarItem>
+                    <NavbarItem className="is-tab" isActive={currentPath === '/careers/'}><Link to="/careers">Careers</Link></NavbarItem>
                 </NavbarEnd>
             </NavbarMenu>
         </Navbar>

@@ -14,12 +14,8 @@ const AppFooter = () => (
           </Column>
         </Columns>
         <Content isSize="small">
-          <p>
-            The source code is licensed under <a target="_blank">MIT</a>.
-          </p>
-          <p>
-            The website content is licensed under{' '}
-            <a target="_blank">CC ANS 4.0</a>.
+          <p>The source code is licensed under MIT.</p>
+          <p>The website content is licensed under CC ANS 4.0.
           </p>
         </Content>
       </Content>
