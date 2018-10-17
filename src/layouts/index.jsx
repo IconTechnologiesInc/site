@@ -6,7 +6,7 @@ import Header from '../components/Header/index'
 import Footer from '../components/Footer/index'
 import emergence from 'emergence.js'
 import { ThemeProvider } from 'styled-components'
-import theme from '../layouts/theme'
+import theme from './theme'
 
 class MainLayout extends React.Component {
     componentDidMount() {
@@ -33,9 +33,5 @@ class MainLayout extends React.Component {
         )
     }
 }
-
-// MainLayout.propTypes = {
-//   children: PropTypes.func,
-// }
 
 export default MainLayout

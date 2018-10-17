@@ -6,43 +6,41 @@ $size-5: 1.2rem
 $size-6: 1rem
 $size-7: 0.75rem
 
-@import "~bulma"
-@import "animation"
-@import "colors"
-@import "hero"
-
 $brand-color-primary: #49AFDB
 $brand-color-lighter: #8EC8E1
 $brand-color-darker: #3886A8
 $brand-color-darker-2: #1E495B
 $brand-color-darkest: #3A515B
 
-$base-gap-size: 5; // 5rem
-$gap-size-1: $base-gap-size + rem
-$gap-size-2: ($base-gap-size * 0.8) + rem
-$gap-size-3: ($base-gap-size * 0.6) + rem
-$gap-size-4: ($base-gap-size * 0.4) + rem
-$gap-size-5: ($base-gap-size * 0.2) + rem
+$custom-colors: (("brand": ($brand-color-primary, findColorInvert($brand-color-primary))))
+
+@import "~bulma"
+@import "animation"
+@import "colors"
+@import "hero"
+@import "flex"
+
+$base-gap-multiplier: .10;
+$gap-size-1: calc(100vh * #{$base-gap-multiplier})
+$gap-size-2: calc(100vh * (#{$base-gap-multiplier} * .8))
+$gap-size-3: calc(100vh * (#{$base-gap-multiplier} * .6)) 
+$gap-size-4: calc(100vh * (#{$base-gap-multiplier} * .4))
+$gap-size-5: calc(100vh * (#{$base-gap-multiplier} * .2)) 
 
 $base-card-x-padding: 5%
 
-// fix to keep footer at bottom
 .content-x 
-    background-color: $background
-    margin-bottom: 240px
-    padding-bottom: 8%
+    background-color: $white
+    margin-bottom: 400px
     position: relative
     z-index: 1   
-
-#footer
-    bottom: 0
-    position: fixed
-    width: 100%
-    z-index: -1
 
 h1
     font-weight: bold !important
     @extend .has-text-grey-dark
+
+ol
+    margin-left: 15px
 
 .has-top-gap-1
     margin-top: $gap-size-1 !important
@@ -78,6 +76,10 @@ h1
         .card-x-header
             @extend .has-background-grey-lighter
 
+.helping.numbered-list
+    img
+        margin-right: 20px
+
 [data-emergence="hidden"]
     opacity: 0
 [data-emergence="visible"].slide-up
@@ -100,30 +102,3 @@ h1
         background-color: $brand-color-primary
     &.is-branded-dark
         background-color: $brand-color-darker
-
-// .beb
-//     pointer-events: none 
-//     position: relative
-//     transition: background-image 2s ease
-//     z-index: 10
-
-//     &:before
-//         content: ''
-//         opacity: 0
-//         position: absolute
-//         top: 0
-//         right: 0
-//         bottom: 0
-//         left: 0
-//         z-index: -10
-//         transition: opacity 1s ease-in-out
-
-//     &:hover
-//         &:before
-//             opacity: 1
-
-//     &-grey-lighter:before
-//         background-image: linear-gradient(transparent, $grey-lighter)
-
-//     button, .button
-//         pointer-events: auto

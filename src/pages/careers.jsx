@@ -36,9 +36,10 @@ const CareersPage = props => (
 
         <Section>
             <Container>
-                <Columns isCentered={true} className="has-bottom-gap-1">
-                    <Column isCentered={true} className="is-3 is-size-3 has-text-centered">
+                <Columns isCentered={true} className="has-bottom-gap-3">
+                    <Column isCentered={true} className="is-3 is-size-2 has-text-centered">
                         <h2>Our Benefits</h2>
+                        <hr className="has-background-grey-light"/>
                     </Column>
                 </Columns>
 
@@ -218,7 +219,7 @@ const CareersPage = props => (
                                 paddingBottom: 25,
                             }}
                         >
-                            <Button primary className="line-effect">JOIN THE TEAM</Button>
+                            <Button light>JOIN THE TEAM</Button>
                         </Column>
                     </Columns>
                 </Container>

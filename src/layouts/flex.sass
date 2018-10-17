@@ -1,0 +1,15 @@
+.flex
+    display: flex
+    flex-direction: row
+    align-items: center
+    flex-wrap: wrap
+
+    > .flex-item 
+        flex: none
+        justify-content: start
+
+        @for $i from 1 through 12
+            &.is-#{$i}
+                width: percentage($i / 12)
+            &.is-offset-#{$i}
+                margin-left: percentage($i / 12)
