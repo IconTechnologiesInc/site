@@ -132,19 +132,19 @@ const AppFooter = () => (
                     <Column className="is-5 is-offset-1">
                         <SocialList>
                             <li>
-                                <a href="https://www.facebook.com/icon.technologies.inc/">
+                                <a target="_blank" href="https://www.facebook.com/icon.technologies.inc/">
                                     <i className="fa fa-facebook"></i>
                                     {/* <img src={facebook} alt="Facebook" style={{ height: 30, width: 'auto' }}/> */}
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/company/icon-technologies-inc/">
+                                <a target="_blank" href="https://www.linkedin.com/company/icon-technologies-inc/">
                                     <i className="fa fa-linkedin"></i>
                                     {/* <img src={linkedin} alt="LinkedIn" style={{ height: 30, width: 'auto' }}/> */}
                                 </a>                                
                             </li>
                             <li>
-                                <a href="https://github.com/IconTechnologiesInc">
+                                <a target="_blank" href="https://github.com/IconTechnologiesInc">
                                     <i className="fa fa-github"></i>
                                     {/* <img src={github} alt="Github" style={{ height: 30, width: 'auto' }}/> */}
                                 </a>                                
