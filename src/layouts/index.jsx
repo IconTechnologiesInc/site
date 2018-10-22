@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import styled, { css } from 'styled-components'
 import 'font-awesome/css/font-awesome.css'
 import './all.sass'
 import Header from '../components/Header/index'
@@ -7,6 +8,18 @@ import Footer from '../components/Footer/index'
 import emergence from 'emergence.js'
 import { ThemeProvider } from 'styled-components'
 import theme from './theme'
+
+const Content = styled.div`${({ theme }) => css`
+    background-color: ${theme.colors.white};
+    margin-bottom: 445px;
+    position: relative;
+    z-index: 1;
+
+    ${theme.responsiveness.mobile(`
+        margin-bottom: 673px;
+    `)}
+`}
+`
 
 class MainLayout extends React.Component {
     componentDidMount() {
@@ -23,9 +36,9 @@ class MainLayout extends React.Component {
                     </Helmet>        
                     <Header currentPath={this.props.location.pathname}/>
                     
-                    <div className="content-x">
+                    <Content>
                         {this.props.children}
-                    </div>
+                    </Content>
     
                     <Footer/>
                 </div>

@@ -11,10 +11,10 @@ const InfoCallout = styled.div`
         ${props => props.theme.responsiveness.mobile(`
             border-right: none;
             margin-top: -3rem;
-            margin-left: inherit;
+            margin-left: auto;
 
             &:after {
-                content: "";
+                display: none;
             }
         `)}
     }
