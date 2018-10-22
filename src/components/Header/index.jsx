@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
+import raf from 'raf'
 import logo from '../../images/icon_logo.svg'
 
 const NavStyled = styled.div`
@@ -15,6 +16,15 @@ const NavStyled = styled.div`
     justify-content: space-between;
     align-items: center;
     padding-right: 30px;
+    transition: top 200ms ease-in-out;
+
+    &.header--hide {
+        top: -105px;
+    }
+
+    &.open {
+        top: 0;
+    }
 `
 
 const NavBurgerMenu = styled.a.attrs({ role: 'button', 'aria-label': 'menu', className: 'nav-burger' })`
@@ -105,7 +115,7 @@ const Menu = styled.div`${props => {
                 display: block;
                 font-size: ${fonts.size.medium};
 
-                &:hover {
+                &:hover, &.active {
                     border-left-color: ${colors.secondary};
                     color: ${colors.secondary};
                 }
@@ -148,15 +158,30 @@ const Social = styled.div`${props => {
             }
         }
 `}}`
-    
 
 export default class AppHeader extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = { isOpen: false };
+        this.didScroll = false;
+        this.lastScrollY = 0;
+        this.scrollTolerance = 5;
+        this.navHeight = 0;
 
         this.onClick = this.onClick.bind(this);
+        this.scrolled = this.scrolled.bind(this);
+        this.afterScrolled = this.afterScrolled.bind(this);
+    }
+
+    componentDidMount() {
+        this.navHeight = this.element.offsetHeight;
+        window.addEventListener('scroll', () => {
+            if(this.didScroll) return;
+
+            this.didScroll = true;
+            raf(this.scrolled);
+        });
     }
 
     onClick() {
@@ -164,12 +189,40 @@ export default class AppHeader extends React.Component {
         this.setState({ isOpen: !isOpen });
     }
 
+    afterScrolled(currentScrollY) {
+        this.lastScrollY = currentScrollY;
+        this.didScroll = false;
+    }
+
+    scrolled() {
+        const scrollY = window.pageYOffset;
+        const { lastScrollY, scrollTolerance, navHeight, element } = this;
+        const distanceScrolled = Math.abs(scrollY - lastScrollY);
+        const [ showClass, hideClass ] = ['header--show', 'header--hide'];
+
+        // if they've scrolled less than the allowed tolerance then don't do anything
+        if(distanceScrolled <= scrollTolerance) return this.afterScrolled(scrollY);
+
+        // if they're scrolling down and past the nav, hide the nav
+        if(scrollY > lastScrollY && scrollY > navHeight) {
+            element.classList.remove(showClass);
+            element.classList.add(hideClass);
+        } else {// they're scrolling up, show the nav
+            element.classList.remove(hideClass);
+            element.classList.add(showClass);
+        }
+
+        this.afterScrolled(scrollY);
+    }
+
+    setRef = ref => (this.element = ref)
+
     render() {
         const currentPath = this.props.currentPath.replace(/\/$/, '');
         const openClass = this.state.isOpen ? 'open' : '';
 
         return (
-            <NavStyled>
+            <NavStyled ref={this.setRef} className={openClass}>
                 <Link to="/">
                     <img src={logo} alt="Icon Technologies, Inc." style={{ height: 75, width: 'auto' }}/>
                 </Link>
@@ -181,25 +234,26 @@ export default class AppHeader extends React.Component {
                 <Menu className={openClass}>
                     <ul>
                         <li>
-                            <a>
+                            {/* @TODO: These anchors should change to gatsby Links once the actual pages exists */}
+                            <a className={currentPath === '/services' ? 'active' : ''}>
                                 Services
                                 <span className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                             </a>
                         </li>
                         <li>
-                            <a>
+                            <a className={currentPath === '/services' ? 'active' : ''}>
                                 Work
                                 <span className="description">Cras volutpat lorem volutpat urna tincidunt.</span>
                             </a>
                         </li>
                         <li>
-                            <a>
+                            <a className={currentPath === '/services' ? 'active' : ''}>
                                 Careers
                                 <span className="description">Sed a nisi a ligula blandit molestie sit amet ac sapien.</span>
                             </a>
                         </li>
                         <li>
-                            <a>
+                            <a className={currentPath === '/services' ? 'active' : ''}>
                                 Contact
                                 <span className="description"> Nunc sit amet magna aliquet mauris lobortis facilisis.</span>
                             </a>
