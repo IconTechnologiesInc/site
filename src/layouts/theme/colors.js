@@ -19,8 +19,10 @@ const colors = {
     whiteBis: 'hsl(0, 0%, 98%)',
     white: 'hsl(0, 0%, 100%)',
 
-    lighten: (color, percent) => Color(color).lighten(percent),
-    darken: (color, percent) => Color(color).darken(percent)
+    lighten: (color, percent) => Color(color).lighten(percent).string(),
+    darken: (color, percent) => Color(color).darken(percent).string(),
+    toHSLA: (color, alpha) => Color(color).alpha(alpha).hsl().string(),
+    toTransparent: color => Color(color).alpha(0).hsl().string()
 }
 
 colors.default = colors.greyDark;

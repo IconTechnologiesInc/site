@@ -1,5 +1,7 @@
 import { css } from 'styled-components'
 import colors from './colors'
+import fonts from './fonts'
+import animation from './animation'
 
 const gap = 64;
 const calculateResponsiveSize = initialSize => initialSize + (2 * gap);
@@ -14,8 +16,10 @@ const r = {
 };
 
 export default {
+    animation,
     background: colors.whiteTer,
     colors,
+    fonts,
     responsiveness: {
         from: (device, content) => css`
             @media screen and (min-width: ${toPx(device)}) {

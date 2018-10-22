@@ -9,17 +9,41 @@ import emergence from 'emergence.js'
 import { ThemeProvider } from 'styled-components'
 import theme from './theme'
 
-const Content = styled.div`${({ theme }) => css`
-    background-color: ${theme.colors.white};
-    margin-bottom: 445px;
-    position: relative;
-    z-index: 1;
+const Content = styled.div`${({ theme }) => {
+    const timingFunction = 'ease-in-out';
+    return css`
+        background-color: ${theme.colors.white};
+        margin-bottom: 445px;
+        position: relative;
+        z-index: 1;
 
-    ${theme.responsiveness.mobile(`
-        margin-bottom: 673px;
-    `)}
-`}
-`
+        ${theme.responsiveness.mobile(`
+            margin-bottom: 673px;
+        `)}
+
+        .hero .hero-body {
+            h1, title, subtitle {
+                visibility: hidden;
+
+                .body--loaded & {
+                    visibility: visible;
+                }
+            }
+
+            h1, title {
+                .body--loaded & {
+                    animation: fadeInUpSmall ${theme.animation.duration.slow} both ${timingFunction};
+                }  
+            }
+
+            .subtitle {
+                .body--loaded & {
+                    animation: fadeInUpSmall ${theme.animation.duration.slower} both ${timingFunction} 600ms;
+                }
+            }
+        }
+    `}
+}`
 
 class MainLayout extends React.Component {
     componentDidMount() {
