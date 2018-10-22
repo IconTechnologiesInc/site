@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container, Columns, Column, Hero, HeroBody, HeroFooter, Icon, Section } from 'bloomer'
+import { Container, Columns, Column, Hero, HeroBody, HeroFooter, Image, Section } from 'bloomer'
 import { Subtitle, TextColor, Title } from '../components/Text'
 import Scrolldown from '../components/Scrolldown'
 import Layout from '../layouts'
@@ -50,6 +50,9 @@ const DCSklyineSection = styled(Section).attrs({ className: 'is-medium' })`
 `
 
 const InfoCalloutStyled = styled(InfoCallout)`
+    margin-top: -8.2rem;
+    margin-left: -0.8rem;
+
     .column {
         height: calc(100vh * .17);
 
@@ -101,6 +104,18 @@ const MainHero = styled(Hero)`
     }
 `
 
+const ContactColumnStyled = styled(Column)`
+    &&& {
+        display: flex;
+        flex-basis: auto;
+        margin-bottom: 15px;
+
+        figure {
+            margin-right: 30px;
+        }
+    }
+`
+
 const IndexPage = props => (
     <Layout location={props.location}> 
         <MainHero>
@@ -122,7 +137,7 @@ const IndexPage = props => (
         <Section id="about" className="is-medium">
             <Columns>
                 {/* Capabilities  */}
-                <InfoCalloutStyled className="column is-5 has-text-centered" color="greyLighter" style={{ marginTop: '-8.2rem', marginLeft: '-0.8rem' }}>
+                <InfoCalloutStyled className="column is-5 has-text-centered" color="greyLighter">
                     <Columns className="is-multiline">
                         <Column className="is-6">
                             <img src={coaching} style={{ height: 60, width: 'auto' }}/>
@@ -177,26 +192,14 @@ const IndexPage = props => (
                 </Column>
                 <Column className="is-offset-1 is-4">
                     <VerticalColumns>
-                        <Column>
-                            <Columns>
-                                <Column className="is-2">
-                                    <img src={phone} alt="phone" style={{ height: 60, width: 'auto' }}/>
-                                </Column>
-                                <Column className="is-size-3">
-                                    <TextColor as="p" color="grey">443.742.1509</TextColor>
-                                </Column>
-                            </Columns>
-                        </Column>
-                        <Column>
-                            <Columns>
-                                <Column className="is-2">
-                                    <img src={email} alt="email" style={{ height: 60, width: 'auto' }}/>
-                                </Column>
-                                <Column className="is-size-3">
-                                    <TextColor as="p" color="grey">info@icontech.io</TextColor>
-                                </Column>
-                            </Columns>                        
-                        </Column>
+                        <ContactColumnStyled>
+                            <Image src={phone} alt="phone" className="is-64x64"/>
+                            <TextColor as="span" color="grey" className="is-size-3">443.742.1509</TextColor>
+                        </ContactColumnStyled>
+                        <ContactColumnStyled>
+                            <Image src={email} alt="email" className="is-64x64"/>
+                            <TextColor as="span" color="grey" className="is-size-3">info@icontech.io</TextColor>                     
+                        </ContactColumnStyled>
                     </VerticalColumns>
                 </Column>
             </Columns>

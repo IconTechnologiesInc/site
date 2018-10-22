@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Footer, Container, Content, Columns, Column, Icon } from 'bloomer'
+import { Footer, Container, Content, Columns, Column, Icon, Image } from 'bloomer'
 import VerticalColumns from '../VerticalColumns'
 import { TextColor } from '../Text'
 
@@ -82,12 +82,23 @@ const SocialList = styled.ul`
 
 `
 
+const ContactInfoStyled = styled(Column)`
+    &&& {
+        display: flex;
+        flex-basis: auto;
+        margin-bottom: 20px;
+    
+        figure {
+            margin-right: 25px;
+        }
+    }
+`
+
 const AppFooter = () => (
   <FooterStyled id="footer">
-        
     <VerticalColumns>
         <Column>
-            <Container>
+            <Container style={{ paddingRight: 25, paddingLeft: 25 }}>
                 <Columns>
                     {/* Logo */}
                     <Column className="is-3">
@@ -97,36 +108,18 @@ const AppFooter = () => (
                     {/* Contact */}
                     <Column className="is-3">
                         <VerticalColumns>
-                            <Column>
-                                <Columns>
-                                    <Column className="is-2">
-                                        <img src={phone} alt="phone" style={{ height: 30, width: 'auto' }}/>
-                                    </Column>
-                                    <Column className="is-size-5">
-                                        <TextColor as="p" color="greyLighter">443.742.1509</TextColor>
-                                    </Column>
-                                </Columns>
-                            </Column>
-                            <Column>
-                                <Columns>
-                                    <Column className="is-2">
-                                        <img src={email} alt="email" style={{ height: 30, width: 'auto' }}/>
-                                    </Column>
-                                    <Column className="is-size-5">
-                                        <TextColor as="p" color="greyLighter">info@icontech.io</TextColor>
-                                    </Column>
-                                </Columns>                        
-                            </Column>
-                            <Column>
-                                <Columns>
-                                    <Column className="is-2">
-                                        <img src={location} alt="location" style={{ height: 30, width: 'auto' }}/>
-                                    </Column>
-                                    <Column className="is-size-5">
-                                        <TextColor as="p" color="greyLighter">Washington, DC</TextColor>
-                                    </Column>
-                                </Columns>                        
-                            </Column>
+                            <ContactInfoStyled>
+                                <Image src={phone} alt="phone" className="is-32x32"/>
+                                <TextColor as="span" color="greyLighter">443.742.1509</TextColor>
+                            </ContactInfoStyled>
+                            <ContactInfoStyled>
+                                <Image src={email} alt="email" className="is-32x32"/>
+                                <TextColor as="span" color="greyLighter">info@icontech.io</TextColor>                       
+                            </ContactInfoStyled>
+                            <ContactInfoStyled>
+                                <Image src={location} alt="location" className="is-32x32"/>
+                                <TextColor as="span" color="greyLighter">Washington, DC</TextColor>                     
+                            </ContactInfoStyled>
                         </VerticalColumns>
                     </Column>
                     <Column className="is-5 is-offset-1">
