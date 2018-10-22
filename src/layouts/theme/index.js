@@ -1,5 +1,6 @@
 import { css } from 'styled-components'
 import colors from './colors'
+import fonts from './fonts'
 
 const gap = 64;
 const calculateResponsiveSize = initialSize => initialSize + (2 * gap);
@@ -15,6 +16,7 @@ const r = {
 
 export default {
     background: colors.whiteTer,
+    fonts,
     colors,
     responsiveness: {
         from: (device, content) => css`
