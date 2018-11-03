@@ -29,7 +29,7 @@ export default styled.ol.attrs({ className: 'numbered-list' })`
         }
 
         &:not(:last-child) {
-            margin-bottom: calc(100vh * .3);
+            margin-bottom: calc(100vh * .05);
         }
 
         &[data-emergence="visible"] {

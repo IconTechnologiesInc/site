@@ -99,3 +99,18 @@ ol
         background-color: $brand-color-primary
     &.is-branded-dark
         background-color: $brand-color-darker
+
+.no-print 
+    @media print 
+        display: none
+
+@page
+    size: A4 portrait
+    margin: .5in .25in
+    
+    @bottom-right-corner
+        content: counter(page) " of " counter(pages)
+        vertical-align: top
+    @bottom-left-corner
+        content: ""
+    

@@ -1,7 +1,7 @@
 export default {
     size: {
-        largeest: '6rem',
-        largeer: '3rem',
+        largest: '6rem',
+        larger: '3rem',
         large: '2rem',
         medium: '1.5rem',
         small: '1.2rem',

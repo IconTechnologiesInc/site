@@ -21,6 +21,10 @@ const Content = styled.div`${({ theme }) => {
             margin-bottom: 673px;
         `)}
 
+        @media print {
+            margin-bottom: 0;
+        }
+
         .hero .hero-body {
             h1, title, subtitle {
                 visibility: hidden;

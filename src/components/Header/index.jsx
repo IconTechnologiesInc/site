@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 import raf from 'raf'
+import Social from '../Social'
 import logo from '../../images/icon_logo.svg'
 
 const NavStyled = styled.div`
@@ -24,6 +25,10 @@ const NavStyled = styled.div`
 
     &.open {
         top: 0;
+    }
+
+    @media print {
+        display: none;
     }
 `
 
@@ -130,7 +135,7 @@ const Menu = styled.div`${props => {
     `
 }}`
 
-const Social = styled.div`${props => {
+const SocialWrapper = styled.div`${props => {
     const { colors, fonts } = props.theme;
     return css`
         &&& {
@@ -144,12 +149,12 @@ const Social = styled.div`${props => {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 15px 25px 15px 90px;
+                padding: 10px 25px 10px 90px;
                 width: 225px;
 
                 a {
                     color: ${colors.greyDark};                    
-                    font-size: ${fonts.size.small};
+                    font-size: ${fonts.size.medium};
 
                     &:hover {
                         color: ${colors.grey};
@@ -234,11 +239,11 @@ export default class AppHeader extends React.Component {
                 <Menu className={openClass}>
                     <ul>
                         <li>
-                            {/* @TODO: These anchors should change to gatsby Links once the actual pages exists */}
-                            <a className={currentPath === '/services' ? 'active' : ''}>
-                                Services
-                                <span className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                            </a>
+                            {/* @TODO: These anchors should change to gatsby Links once the actual pages exist */}
+                            <Link to="/about" className={currentPath === '/about' ? 'active' : ''}>
+                                About
+                                <span className="description">We're proud of who we are. Learn more about us.</span>
+                            </Link>
                         </li>
                         <li>
                             <a className={currentPath === '/services' ? 'active' : ''}>
@@ -253,34 +258,13 @@ export default class AppHeader extends React.Component {
                             </a>
                         </li>
                         <li>
-                            <a className={currentPath === '/services' ? 'active' : ''}>
+                            <Link to="/contact" className={currentPath === '/contact' ? 'active' : ''}>
                                 Contact
-                                <span className="description"> Nunc sit amet magna aliquet mauris lobortis facilisis.</span>
-                            </a>
+                                <span className="description">Let's see how we can help you. Get in touch.</span>
+                            </Link>
                         </li>
                     </ul>
-                    <Social>
-                        <ul>
-                            <li>
-                                <a target="_blank" href="https://www.facebook.com/icon.technologies.inc/">
-                                    <i className="fa fa-facebook"></i>
-                                    {/* <img src={facebook} alt="Facebook" style={{ height: 30, width: 'auto' }}/> */}
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://www.linkedin.com/company/icon-technologies-inc/">
-                                    <i className="fa fa-linkedin"></i>
-                                    {/* <img src={linkedin} alt="LinkedIn" style={{ height: 30, width: 'auto' }}/> */}
-                                </a>                                
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://github.com/IconTechnologiesInc">
-                                    <i className="fa fa-github"></i>
-                                    {/* <img src={github} alt="Github" style={{ height: 30, width: 'auto' }}/> */}
-                                </a>                                
-                            </li>
-                        </ul>
-                    </Social>
+                    <SocialWrapper><Social/></SocialWrapper>
                 </Menu>
             </NavStyled>
         )

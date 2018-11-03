@@ -1,9 +1,10 @@
 import React from 'react'
 import { Container, Columns, Column, Hero, HeroBody, Image, Section } from 'bloomer'
 import Button from '../components/Button'
-import { Subtitle, TextColor, Title } from '../components/Text'
+import { Subtitle, Text, Title } from '../components/Text'
 import NumberedList from '../components/NumberedList'
 import VerticalColumns from '../components/VerticalColumns'
+import InfoCallout from '../components/InfoCallout'
 import Layout from '../layouts'
 import styled, { css } from 'styled-components'
 import { Emerge } from 'react-emergence'
@@ -20,49 +21,37 @@ import partners from '../images/002-team.svg'
 import customers from '../images/003-group.svg'
 import lincoln from '../images/lincoln-memorial.jpeg'
 
-const Info = styled(Column).attrs({ className: 'is-5-fullhd is-6-widescreen is-7-desktop is-8-tablet has-text-white' })`
+const InfoCalloutStyled = styled(InfoCallout)`${({ theme }) => css`
     &&& {
-        margin-left: -1.55rem;
-        margin-top: -4rem;
-        padding: 100px 0;
-        position: relative;
-        background-color: ${props => props.theme.colors.secondary};
-        z-index: 1;
+        width: 50%;
+        margin-top: -2.5rem;
 
-        ${props => props.theme.responsiveness.mobile(`
-            border-right: none;
-            margin-top: -3rem;
-            margin-left: inherit;
-
-            &:after {
-                content: "";
-            }
+        ${theme.responsiveness.touch(`
+            width: 70%;
         `)}
-    }
 
-    &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 92%;
-        bottom: 0;
-        clip-path: polygon(0 0, 32% 0, 100% 100%, 0% 100%);
-        background-color: ${props => props.theme.colors.secondary};
-        min-width: 250px;
-        z-index: -1;
-    }
+        ${theme.responsiveness.mobile(`
+            width: 100%;
+            margin-top: inherit;
+        `)}
 
-    .column {
-        text-align: center;
-        flex-basis: 175px;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
+        .column {
+            text-align: center;
+            flex-basis: 175px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    
+        .column:not(:last-child) {
+            border-right: 2px solid ${theme.colors.lighten(theme.colors.secondary, .25)};
 
-    .column:not(:last-child) {
-        border-right: 2px solid ${props => props.theme.colors.lighten(props.theme.colors.secondary, .25).string()};
+            ${theme.responsiveness.mobile(`
+                border-right: none;
+                margin-bottom: 20px;
+            `)}
+        }
     }
-`
+`}`
 
 const FullSection = styled(Section).attrs({ className: 'is-medium' })`
     padding-top: calc(100vh * .05);
@@ -167,7 +156,7 @@ const AboutPage = props => (
                 <Container>
                     <VerticalColumns className="has-text-centered">
                         <Column>
-                            <Title className="is-size-1 has-text-white-ter">The right <TextColor color="primary">people</TextColor><br/> with the right passion</Title>
+                            <Title className="is-size-1 has-text-white-ter">The right <Text color="primary">people</Text><br/> with the right passion</Title>
                         </Column>
                         <Column>
                             <hr style={{ width: '50%', backgroundColor: 'grey', margin: '0 auto' }}/>
@@ -183,26 +172,25 @@ const AboutPage = props => (
             </HeroBody>
         </HeroDarkOverlayFull>
 
-        <FullSection>
-            <Columns style={{ position: 'absolute', width: '100%', top: 30 }}>
-                <Info>
-                    <Columns>
-                        <Column>
-                            <span className="has-text-weight-bold">CAGE CODE</span><br/>
-                            <span className="is-size-4 has-text-weight-light">86EL1</span>
-                        </Column>
-                        <Column>
-                            <span className="has-text-weight-bold">DUNS NUMBER</span><br/>
-                            <span className="is-size-4 has-text-weight-light">081241076</span>
-                        </Column>
-                        <Column>
-                            <span className="has-text-weight-bold">CLASSIFICATION</span><br/>
-                            <span className="is-size-4 has-text-weight-light">8(A)</span>
-                        </Column>
-                    </Columns>
-                </Info>
+        <InfoCalloutStyled color="secondary" minHeight="250px" width="">
+            <Columns>
+                <Column>
+                    <span className="has-text-weight-bold">CAGE CODE</span><br/>
+                    <span className="is-size-4 has-text-weight-light">86EL1</span>
+                </Column>
+                <Column>
+                    <span className="has-text-weight-bold">DUNS NUMBER</span><br/>
+                    <span className="is-size-4 has-text-weight-light">081241076</span>
+                </Column>
+                <Column>
+                    <span className="has-text-weight-bold">CLASSIFICATION</span><br/>
+                    <span className="is-size-4 has-text-weight-light">8(A)</span>
+                </Column>
             </Columns>
-            <Container style={{ marginTop: 'calc(100vh * .15)' }}>
+        </InfoCalloutStyled>
+
+        <Section className="is-medium">
+            <Container>
                 <Columns isCentered>
                     <Column className="is-4">
                         <div className="title">Iconian</div>
@@ -213,9 +201,6 @@ const AboutPage = props => (
                             <li>an employee of Icon Technologies.</li>
                         </ol>
                     </Column>
-                    {/* <Column className="is-4-desktop is-hidden-mobile" style={{ position: 'relative' }}>
-                        <img src={logo} style={{ transform: 'rotate(-90deg)', position: 'absolute', bottom: '24%', left: '15%', height: '220px' }}/>
-                    </Column> */}
                     <Column className="is-6 is-offset-1">
                         <Title as="p" color="primary" className="is-size-2">Icon is a fullstack digital services company.</Title>
                         <p className="is-size-5 has-text-grey has-top-gap-3"><b>We're founded on the premise of helping people grow.</b> Helping someone can be such a small gesture, but it can have profound impacts. Think butterfly effect. That's important to us, here's how we help...</p>
@@ -264,7 +249,7 @@ const AboutPage = props => (
                     </Column>
                 </Columns>
             </Container>
-        </FullSection>
+        </Section>
 
         <FullSection backgroundOverlay mobile backgroundImage={lincoln} backgroundPosition="50%" backgroundWidth="50%" backgroundColor="greyLighter">
             <Columns className="is-centered">

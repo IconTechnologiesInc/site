@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Footer, Container, Columns, Column, Icon, Image } from 'bloomer'
 import VerticalColumns from '../VerticalColumns'
-import { TextColor } from '../Text'
+import { Text } from '../Text'
 
 // images
 import logo from '../../images/icon_logo_light.svg'
@@ -19,6 +19,10 @@ const FooterStyled = styled(Footer)`
         position: fixed;
         width: 100%;
         z-index: -1;
+
+        @media print {
+            display: none;
+        }
     }    
 `
 
@@ -107,39 +111,36 @@ const AppFooter = () => (
 
                     {/* Contact */}
                     <Column className="is-3">
-                        <VerticalColumns>
+                        <VerticalColumns style={{ alignItems: 'start' }}>
                             <ContactInfoStyled>
                                 <Image src={phone} alt="phone" className="is-32x32"/>
-                                <TextColor as="span" color="greyLighter">443.742.1509</TextColor>
+                                <Text as="span" color="greyLighter">443.742.1509</Text>
                             </ContactInfoStyled>
                             <ContactInfoStyled>
                                 <Image src={email} alt="email" className="is-32x32"/>
-                                <TextColor as="span" color="greyLighter">info@icontech.io</TextColor>                       
+                                <Text as="span" color="greyLighter">info@icontech.io</Text>                       
                             </ContactInfoStyled>
                             <ContactInfoStyled>
                                 <Image src={location} alt="location" className="is-32x32"/>
-                                <TextColor as="span" color="greyLighter">Washington, DC</TextColor>                     
+                                <Text as="span" color="greyLighter">Washington, DC</Text>                     
                             </ContactInfoStyled>
                         </VerticalColumns>
                     </Column>
                     <Column className="is-5 is-offset-1">
                         <SocialList>
                             <li>
-                                <a target="_blank" href="https://www.facebook.com/icon.technologies.inc/">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/icon.technologies.inc/">
                                     <i className="fab fa-facebook"></i>
-                                    {/* <img src={facebook} alt="Facebook" style={{ height: 30, width: 'auto' }}/> */}
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://www.linkedin.com/company/icon-technologies-inc/">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/icon-technologies-inc/">
                                     <i className="fab fa-linkedin"></i>
-                                    {/* <img src={linkedin} alt="LinkedIn" style={{ height: 30, width: 'auto' }}/> */}
                                 </a>                                
                             </li>
                             <li>
-                                <a target="_blank" href="https://github.com/IconTechnologiesInc">
+                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/IconTechnologiesInc">
                                     <i className="fab fa-github"></i>
-                                    {/* <img src={github} alt="Github" style={{ height: 30, width: 'auto' }}/> */}
                                 </a>                                
                             </li>
                         </SocialList>
@@ -149,7 +150,7 @@ const AppFooter = () => (
         </Column>
 
         {/* copyright */}
-        <Column style={{ marginTop: 45 }}>
+        <Column style={{ marginTop: 45, width: '100%' }}>
             <Copyright>
                 <p>Made with<Icon hasTextColor="danger" className="fa fa-heart" /> by Icon Technologies, Inc.</p>
                 <p>©2018 Icon Technologies. All rights reserved.</p>

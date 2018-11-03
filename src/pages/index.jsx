@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container, Columns, Column, Hero, HeroBody, HeroFooter, Image, Section } from 'bloomer'
-import { Subtitle, TextColor, Title } from '../components/Text'
+import { Subtitle, Text, Title } from '../components/Text'
 import Scrolldown from '../components/Scrolldown'
 import Layout from '../layouts'
 import InfoCallout from '../components/InfoCallout'
@@ -123,8 +123,8 @@ const IndexPage = props => (
                 <Container>
                     <Columns>
                         <Column className="is-8">
-                            <Title className="is-size-1 is-spaced" color="secondary">Evolve.</Title>
-                            <Subtitle className="is-size-2" color="white">Adaptive full stack digitial services to help <TextColor color="secondary" className="has-text-weight-bold">your</TextColor> ogranization transform.</Subtitle>
+                            <Title as="h1" size="largest" className="is-spaced" color="secondary">Evolve.</Title>
+                            <Subtitle as="h2" size="larger" color="white">Adaptive full stack digitial services to help <Text color="secondary" bold>your</Text> ogranization transform.</Subtitle>
                         </Column>
                     </Columns>
                 </Container>
@@ -176,9 +176,9 @@ const IndexPage = props => (
                 
                 {/* About us */}
                 <Column className="is-5 is-offset-1 has-text-grey">
-                    <Subtitle color="primary" className="is-size-2 has-text-weight-bold" style={{ margin: '80px auto', marginTop: 'inherit' }}>Holistic Digital Services.</Subtitle>
+                    <Subtitle as="h2" color="primary" size="larger" bold style={{ margin: '80px auto', marginTop: 'inherit' }}>Holistic Digital Services.</Subtitle>
                     <p className="is-size-5">Icon is a small, minority-owned company. We specialize in delivering full stack IT solutions &amp; services in the face of evolving ecosystems. We can help solve your complex organizational problems through enterprise analysis, systems &amp; software design and implementation, agile project management &amp; coaching, and cloud first solutions.</p>
-                    <Subtitle color="primary" className="is-size-2 has-text-weight-bold" style={{ margin: '80px auto' }}>The right people with the right passion.</Subtitle>
+                    <Subtitle as="h2" color="primary" size="larger" bold style={{ margin: '80px auto' }}>The right people with the right passion.</Subtitle>
                     <p className="is-size-5">Guided by passion, transparency and integrity, we deliver you the right solution with the right professional talent. Icon’s industry leading experts leverage proven agile principles to deliver measurable results. We set upfront expectations. We communicate early and often. And when things change, we learn quickly and pivot properly, to continue to deliver purposeful value to your organization.</p>
                 </Column>
             </Columns>
@@ -188,17 +188,17 @@ const IndexPage = props => (
         <DCSklyineSection>
             <Columns>
                 <Column className="is-offset-2 is-4">
-                    <Subtitle as="p" className="is-size-2 has-text-weight-bold" color="secondary">Let's learn more about each other.</Subtitle>
+                    <Subtitle as="p" size="larger" bold color="secondary">Let's learn more about each other.</Subtitle>
                 </Column>
                 <Column className="is-offset-1 is-4">
-                    <VerticalColumns>
+                    <VerticalColumns style={{ alignItems: 'start' }}>
                         <ContactColumnStyled>
                             <Image src={phone} alt="phone" className="is-64x64"/>
-                            <TextColor as="span" color="grey" className="is-size-3">443.742.1509</TextColor>
+                            <Text color="grey" size="large">443.742.1509</Text>
                         </ContactColumnStyled>
                         <ContactColumnStyled>
                             <Image src={email} alt="email" className="is-64x64"/>
-                            <TextColor as="span" color="grey" className="is-size-3">info@icontech.io</TextColor>                     
+                            <Text color="grey" size="large">info@icontech.io</Text>                     
                         </ContactColumnStyled>
                     </VerticalColumns>
                 </Column>
