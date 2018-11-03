@@ -9,7 +9,7 @@ phases:
      - echo "pre_build step"
  build:
    commands:
-     - echo "pre_build step"
+     - echo "pre_build step "
      - gatsby build
      - cd public
      - aws s3 sync --delete . "s3://icontech-site"
