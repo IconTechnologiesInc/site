@@ -2,13 +2,17 @@ version: 0.2
 phases:
  install:
    commands:
-     - echo "install step"
+     - npm install -g gatsby-cli
+     - npm install 
  pre_build:
    commands:
      - echo "pre_build step"
  build:
    commands:
-     - aws s3 sync --delete . "s3://www.icontech.io"
+     - echo "pre_build step"
+     - gatsby build
+     - cd public
+     - aws s3 sync --delete . "s3://icontech-site"
  post_build:
    commands:
      - echo "post_build step"
