@@ -4663,7 +4663,7 @@ gatsby-react-router-scroll@^2.0.1:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby@^2.0.0:
+gatsby@^2.0.45:
   version "2.0.45"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.45.tgz#bc817dfd7ea6d583a36245569a294b0136489587"
   integrity sha512-tWcdphmEYgyodRsvizGtmTlUN7Qa+Q3KRQXC8lVH79bWHEZObDrBLCZWfBQN0oWlTymrTm++kh/SZ/z/kYIM9g==

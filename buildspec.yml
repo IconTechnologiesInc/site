@@ -1,15 +1,16 @@
-version: 0.2
+version: 0.3
 phases:
  install:
    commands:
-     - npm install -g gatsby
-     - npm install 
+     - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+     - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+     - apt-get install -y yarn
  pre_build:
    commands:
-     - echo "pre_build step"
+     - yarn add gatsby-cli
+     - yarn install
  build:
    commands:
-     - echo "pre_build step "
      - gatsby build
      - cd public
      - aws s3 sync --delete . "s3://icontech.io"
