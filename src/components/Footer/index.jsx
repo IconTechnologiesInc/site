@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Footer, Container, Content, Columns, Column, Icon, Image } from 'bloomer'
+import { Footer, Container, Columns, Column, Icon, Image } from 'bloomer'
 import VerticalColumns from '../VerticalColumns'
 import { TextColor } from '../Text'
 
@@ -126,19 +126,19 @@ const AppFooter = () => (
                         <SocialList>
                             <li>
                                 <a target="_blank" href="https://www.facebook.com/icon.technologies.inc/">
-                                    <i className="fa fa-facebook"></i>
+                                    <i className="fab fa-facebook"></i>
                                     {/* <img src={facebook} alt="Facebook" style={{ height: 30, width: 'auto' }}/> */}
                                 </a>
                             </li>
                             <li>
                                 <a target="_blank" href="https://www.linkedin.com/company/icon-technologies-inc/">
-                                    <i className="fa fa-linkedin"></i>
+                                    <i className="fab fa-linkedin"></i>
                                     {/* <img src={linkedin} alt="LinkedIn" style={{ height: 30, width: 'auto' }}/> */}
                                 </a>                                
                             </li>
                             <li>
                                 <a target="_blank" href="https://github.com/IconTechnologiesInc">
-                                    <i className="fa fa-github"></i>
+                                    <i className="fab fa-github"></i>
                                     {/* <img src={github} alt="Github" style={{ height: 30, width: 'auto' }}/> */}
                                 </a>                                
                             </li>
