@@ -18,3 +18,30 @@ $animation-duration-x6: 1200ms;
         opacity: 1
         transform: translate3d(0, 0, 0)
         display: block
+
+@keyframes nudgeMouse 
+    0% 
+        transform: translateY(0)
+    
+    45% 
+        transform: translateY(8px)
+
+@keyframes mouse-scroll-btn-roll-out
+    0% 
+        stroke-dashoffset: 120
+    to 
+        stroke-dashoffset: 0
+
+@keyframes trackBallSlide
+    0%
+        transform: scaleY(1) translateY(-10px)
+        opacity: 1
+    45% 
+        opacity: 0
+        transform: scaleY(.5) translateY(13px)
+    46%
+        opacity: 0
+        transform: scaleY(1) translateY(-10px)
+    65%,to
+        opacity: 1
+        transform: scaleY(1) translateY(-10px)

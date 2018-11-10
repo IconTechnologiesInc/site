@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled, { css } from 'styled-components'
-import 'font-awesome/css/font-awesome.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 import './all.sass'
 import Header from '../components/Header/index'
 import Footer from '../components/Footer/index'

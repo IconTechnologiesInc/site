@@ -6,6 +6,7 @@ const Container = styled.div`
     margin-bottom: 20px;
 
     a {
+        position: relative;
         animation: nudgeMouse 2.4s cubic-bezier(0.250,0.460,0.450,0.940) infinite;
         border: 0;
         text-align: center;
