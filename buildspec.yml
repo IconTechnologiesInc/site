@@ -10,7 +10,7 @@ phases:
      - apt-get install -y yarn
  pre_build:
    commands:
-     - yarn add gatsby-cli
+     - yarn global add gatsby-cli
      - yarn install
  build:
    commands:
