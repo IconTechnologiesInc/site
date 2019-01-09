@@ -61,7 +61,7 @@ export const Position = styled(props => (
         }
 
         @media print {
-            break-inside: avoid;
+            // break-inside: avoid;
 
             ${Title} {
                 font-size: 14pt;
@@ -121,7 +121,7 @@ export const Experience = styled(props => (
         }
 
         ${Text} {
-            break-after: avoid;
+            // break-after: avoid;
             orphans: 3;
         }
 

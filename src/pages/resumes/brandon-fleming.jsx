@@ -1,14 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Columns, Column, Container, Content, Hero, HeroBody, Icon, Image, Section } from 'bloomer'
+import { Columns, Column, Container, Content, Hero, HeroBody, Icon, Section } from 'bloomer'
 import { Text, Title } from '../../components/Text'
+import Image from '../../components/Image'
 import { Skills, Skill } from '../../components/resume/Skills'
 import { Experience, Position } from '../../components/resume/Experience'
 import { IconStyled } from '../../components/resume'
 import Education from '../../components/resume/Education'
 import Project from '../../components/resume/Project'
 import Layout from '../../layouts'
+
 import umbcLogo from '../../images/umbc.png'
+import portrait from '../../images/portrait-bf.png'
+
+const ImageStyled = styled(Image)`
+    &&& {
+        img {
+            height: 200px;
+            width: auto;   
+        }
+    }
+`
 
 const SectionStyled = styled(Section)`
     &&& {
@@ -122,7 +134,7 @@ export default props => (
                         </ContactColumnsStyled>
                     </Column>
                     <Column>
-                        <Image className="is-128x128 is-pulled-right" src="https://bulma.io/images/placeholders/128x128.png"></Image>
+                        <ImageStyled isRounded className="is-pulled-right" src={portrait}></ImageStyled>
                     </Column>
                 </Columns>
             </SectionStyled>
@@ -142,12 +154,28 @@ export default props => (
                         </Subsection>
                         <Subsection>
                             <SectionTitle>Experience</SectionTitle>
+                            <Experience company="Northrop Grumman">
+                                <Position 
+                                    title="Senior Software Engineer" 
+                                    location="Columbia, MD" 
+                                    from="11/2018 - current"
+                                    skills={['Docker', 'Git', 'JavaScript', 'Jenkins', 'LESS', 'Linux', 'Make', 'NiFi', 'Node.js', 'React', 'Shell Script']}
+                                >
+                                    <p>Developed next generation of NSA RTRG, using metadata from multiple data sources to allow tactical users to rapidly identify adversaries and IEDs in billions of lines of data.</p>
+                                    <Content>
+                                        <ul>
+                                            <li>Developed bulk screening triage tool to process, query, rank and reclassify metadata, resulting in information that is shared or written into a formal reports for dissemination.</li>
+                                            <li>Developed portable, light-weight version of screening application, capable of being deployed to portable systems.</li>
+                                        </ul>
+                                    </Content>
+                                </Position>
+                            </Experience>
                             <Experience company="Lockwood Software Engineering">
                                 <Position 
                                     title="Lead Software Engineer" 
                                     location="Gaithersburg, MD" 
-                                    from="10/2015 - current"
-                                    skills={['JavaScript', 'TypeScript', 'Backbone', 'React', 'LESS', 'Node.js', 'Swagger', 'Express', 'ElasticSearch', 'Git', 'Grunt', 'Jenkins']}
+                                    from="10/2015 - 11/2018"
+                                    skills={['Backbone', 'ElasticSearch', 'Express', 'Git', 'Grunt', 'JavaScript', 'Jenkins', 'LESS', 'Node.js', 'React', 'Swagger', 'TypeScript']}
                                 >
                                     <p>Lead engineer working with Lockheed Martin and Leidos, building and integrating geospatial analysis and intelligence applications through SAFe agile methodologies.</p>
                                     <Content>
@@ -166,7 +194,7 @@ export default props => (
                                     title="Senior Software Engineer" 
                                     location="Columbia, MD" 
                                     from="07/2015 - 10/2015"
-                                    skills={['C# ASP.NET', 'ASP.NET Web API', 'ASP.NET MVC', 'JavaScript', 'HTML', 'AngularJS', 'Knockout', 'Web Workers', 'LESS', 'ScaleOut', 'ElasticSearch', 'TFS', 'SQL Server']}
+                                    skills={['AngularJS', 'ASP.NET MVC', 'ASP.NET Web API', 'C# ASP.NET', 'ElasticSearch', 'HTML', 'Knockout', 'JavaScript', 'LESS', 'ScaleOut', 'SQL Server', 'TFS', 'Web Workers']}
                                 >
                                     <p>Developed and maintained a large scale .NET Learning Management application.</p>
                                     <Content>
@@ -203,7 +231,7 @@ export default props => (
                                     title="Web Developer" 
                                     location="Hanover, MD" 
                                     from="10/2010 - 04/2012"
-                                    skills={['C# ASP.NET', 'ASP.NET Web API', 'ASP.NET MVC', 'JavaScript', 'HTML', 'CSS', 'TFS', 'Omniture', 'SEO', 'SQL Server']}
+                                    skills={['ASP.NET MVC', 'ASP.NET Web API', 'C# ASP.NET', 'CSS', 'HTML', 'JavaScript', 'Omniture', 'SEO', 'SQL Server', 'TFS']}
                                 >
                                     <p>Full stack .NET web development for external client facing websites.</p>
                                     <Content>
@@ -218,7 +246,7 @@ export default props => (
                                     title="SQL/BI Developer" 
                                     location="Hanover, MD" 
                                     from="03/2008 - 10/2010"
-                                    skills={['SQL Server', 'Oracle', 'SQL Management Studio', 'SSRS', 'SSIS', 'SSAS', 'Informatica', 'Actuate', 'Visual Source Safe', 'WebFOCUS', 'VBScript', 'Shell Script', 'VBA', 'ADO']}
+                                    skills={['Actuate', 'ADO', 'Informatica', 'Oracle', 'Shell Script', 'SQL Management Studio', 'SQL Server', 'SSAS', 'SSIS', 'SSRS', 'VBA', 'VBScript', 'Visual Source Safe', 'WebFOCUS']}
                                 >
                                     <p>Member of the Data Warehouse team and BI Developer.</p>
                                     <Content>
@@ -234,7 +262,7 @@ export default props => (
                                     title="Financial Analyst/Developer" 
                                     location="Hanover, MD" 
                                     from="03/2006 - 03/2008"
-                                    skills={['VBA', 'SQL Server', 'Oracle', 'ADO', 'Excel', 'Access']}
+                                    skills={['Access', 'ADO', 'Excel', 'Oracle', 'SQL Server', 'VBA']}
                                 >
                                     <Content>
                                         <ul>
@@ -251,7 +279,7 @@ export default props => (
                                     title="Financial Analyst" 
                                     location="Annapolis, MD" 
                                     from="12/2004 - 03/2006"
-                                    skills={['VBA', 'SQL Server', 'Oracle', 'ADO', 'Excel', 'Access']}
+                                    skills={['Access', 'ADO', 'Excel', 'Oracle', 'SQL Server', 'VBA']}
                                 >
                                     <Content>
                                         <ul>
