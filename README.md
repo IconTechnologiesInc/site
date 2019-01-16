@@ -1,34 +1,49 @@
 ## 🚀 Quick start
 
-1.  **Install the Gatsby CLI.**
+1.  **Install Yarn (if not installed)**
+    
+    ```sh
+    npm install -g yarn
+    ```
+    
+2.  **Clone the Repository**
 
-    The Gatsby CLI helps you create new sites using Gatsby starters.
+    From your development directory run the following commands:
+
+    ```sh
+    git clone https://github.com/IconTechnologiesInc/site.git
+    cd site
+    ```
+    
+3.  **Install the Gatsby CLI and dependencies**
 
     ```sh
     # install the Gatsby CLI globally
     yarn global add gatsby-cli
+    
+    # install project dependencies
+    yarn
     ```
 
-2.  **Start developing.**
+4.  **Start developing**
 
-    Navigate into your new site’s directory and start it up.
+    Navigate into project directory and start it up.
 
     ```sh
-    cd my-default-starter/
     gatsby develop
     ```
 
-3.  **Open the source code and start editing!**
+5.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+    The site is now running at `http://localhost:8000`!
     
     *Note: You'll also see a second link: `http://localhost:8000___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).*
     
-    Open the the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the project in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
     
 ## 🧐 What's inside?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+A quick look at the top-level files and directories you'll see in this project.
 
     .
     ├── node_modules
@@ -63,13 +78,11 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   
   9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
   
-  10.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won’t change this file directly).
+  10.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
   
-  11.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+  11.  **`README.md`**: A text file containing useful reference information about your project.
   
-  12.  **`README.md`**: A text file containing useful reference information about your project.
-  
-  13.  **`yarn.lock`**: [Yarn](https://yarnpkg.com/) is a package manager alternative to npm. You can use either yarn or npm, though all of the Gatsby docs reference npm.  This file serves essentially the same purpose as `package-lock.json`, just for a different package management system.
+  12.  **`yarn.lock`**: [Yarn](https://yarnpkg.com/) is a package manager alternative to npm. You can use either yarn or npm, though all of the Gatsby docs reference npm.  This file serves essentially the same purpose as `package-lock.json`, just for a different package management system.
 
 ## 🎓 Learning Gatsby
 
