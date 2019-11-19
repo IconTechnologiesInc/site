@@ -124,7 +124,7 @@ const IndexPage = props => (
                     <Columns>
                         <Column className="is-8">
                             <Title className="is-size-1 is-spaced" color="secondary">Evolve.</Title>
-                            <Subtitle className="is-size-2" color="white">Adaptive full stack digitial services to help <TextColor color="secondary" className="has-text-weight-bold">your</TextColor> ogranization transform.</Subtitle>
+                            <Subtitle className="is-size-2" color="white">Adaptive full stack digitial services to help <TextColor color="secondary" className="has-text-weight-bold">your</TextColor> organization transform.</Subtitle>
                         </Column>
                     </Columns>
                 </Container>
